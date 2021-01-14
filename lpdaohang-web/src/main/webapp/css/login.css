@@ -1,0 +1,15 @@
+.row-mt-15em {
+    margin-top: 3em;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+.gtco-cover {
+    height: 100%;
+}
+#gtco-header .form-wrap .tab-content {
+    padding: 10px 30px;
+}

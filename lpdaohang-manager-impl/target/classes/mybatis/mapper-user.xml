@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="xyz.freelp.lpdaohang.manager.dao.UserDao">
+	<!-- 密码校验 -->
+	<select id="queryLoginUser" resultType="user">
+		select
+		 id,username
+		from userinfo where useremail = #{useremail} and userpswd = #{userpswd}
+	</select>
+	<!-- 添加用户 -->
+	<insert id="insterUser">
+		INSERT INTO userinfo (username,userpswd,userinvitecode,inviteusercode,useremail) VALUE 
+		(#{username},#{userpswd},#{userinvitecode},#{inviteusercode},#{useremail})
+		<selectKey resultType="java.lang.Integer" keyProperty="id" >
+            SELECT @@IDENTITY AS ID
+        </selectKey>
+	</insert>
+	<!-- 查询用户名是否存在 -->
+	<select id="queryUsername" resultType="user">
+		select
+		 username
+		from userinfo where username = #{username}
+	</select>
+	<!-- 查询邮箱是否存在 -->
+	<select id="queryUseremail" resultType="user">
+		select
+		 useremail
+		from userinfo where useremail = #{useremail}
+	</select>
+	<!-- 获取用户信息 -->
+	<select id="queryUserInfo" resultType="user">
+		select
+		 username,useremail,userinvitecode,inviteusercode
+		from userinfo where id = #{id}
+	</select>
+	<!-- 修改用户名 -->
+	<update id="updateUsername">
+		UPDATE userinfo SET username = #{1} WHERE id = #{0}
+	</update>
+	<!-- 修改用户邮箱 -->
+	<update id="updateUseremail">
+		UPDATE userinfo SET useremail = #{1} WHERE id = #{0}
+	</update>
+	<!-- 修改用户密码 -->
+	<update id="updateUserpswd">
+		UPDATE userinfo SET userpswd = #{1} WHERE id = #{0}
+	</update>
+	<!-- 获取初始化信息 -->
+	<select id="queryInitDate" resultType="page1a3">
+		SELECT * from page1 UNION SELECT * FROM page3
+	</select>
+	<!-- 获取用户标签名 -->
+	<select id="queryLableName" resultType="page2">
+		SELECT lableid,lablename FROM lable WHERE userid = #{id} AND isdel = 0;
+	</select>
+	<!-- 获取标签内容 -->
+	<select id="queryLable" resultType="page2">
+		SELECT lablename,webname,weburl,webid FROM lableinfo WHERE userid = #{id} AND isdel = 0;
+	</select>
+	<!-- 获取用户文本内容 -->
+	<select id="queryUserText" resultType="page2">
+		SELECT textinfo FROM text WHERE userid = #{id};
+	</select>
+	<!-- 添加用户标签 -->
+	<insert id="insterLableName">
+		INSERT INTO lable (userid,lablename,isdel) VALUE (#{0},#{1},0)
+		<selectKey resultType="java.lang.Integer" keyProperty="id" >
+            SELECT @@IDENTITY AS ID
+        </selectKey>
+	</insert>
+	<!-- 删除用户标签 -->
+	<update id="delLable">
+		UPDATE lable SET isdel = 1 WHERE lableid = #{0}
+	</update>
+	<!-- 伴随删除标签删除web -->
+	<update id="delWeb">
+		UPDATE lableinfo SET isdel = 1 WHERE userid = #{0} AND lablename = #{1}
+	</update>
+	<!-- 修改标签名 -->
+	<update id="updateLableName">
+		UPDATE lable SET lablename = #{1} WHERE lableid = #{0}
+	</update>
+	<!-- 添加用户web -->
+	<insert id="insterWeb">
+		INSERT INTO lableinfo (userid,lablename,weburl,webname,isdel) VALUE (#{0},#{1},#{2},#{3},0)
+		<selectKey resultType="java.lang.Integer" keyProperty="id" >
+            SELECT @@IDENTITY AS ID
+        </selectKey>
+	</insert>
+	<!-- 修改用户web -->
+	<update id="updateWeb">
+		UPDATE lableinfo SET weburl = #{3}, webname = #{4} WHERE webid = #{2} AND userid = #{0} AND lablename = #{1} 
+	</update>
+	<!-- 用户删除web -->
+	<update id="delWebS">
+		UPDATE lableinfo SET isdel = 1 WHERE webid = #{2} AND userid = #{0} AND lablename = #{1}
+	</update>
+    <!--
+    <select id="queryRolePermissionByUser" resultType="permission">
+        select * from t_permission
+        where id in (
+	        select
+	            rp.permissionid
+	        from t_role_permission rp
+	        join t_user_role ur on ur.roleid = rp.roleid and ur.userid = #{id}
+        ) and id != pid
+        order by seqno
+    </select>
+
+    
+    <insert id="insertUser">
+        insert into t_user (
+            name,userpswd,sex,email,loginacct
+        ) values (
+            #{name},#{userpswd},#{sex},#{email},#{loginacct}
+        )
+        <selectKey keyProperty="id" resultType="int">
+            select @@identity as id
+        </selectKey>
+    </insert>
+    
+    <update id="updateUser">
+        update t_user
+        set name = #{name}, sex = #{sex}, email = #{email}, loginacct = #{loginacct}
+        where id = #{id}
+    </update>
+    <delete id="deleteUserRole">
+        delete from t_user_role where userid = #{userid} and roleid = #{roleid}
+    </delete>
+    -->
+</mapper>
