@@ -7,7 +7,7 @@
     <meta lang="zh-cn">
 	<title>注册|登录</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="${APP_PATH}/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="${APP_PATH}/css/animate.css">
 	<link rel="stylesheet" href="${APP_PATH}/css/icomoon.css">
 	<link rel="stylesheet" href="${APP_PATH}/css/themify-icons.css">
@@ -36,7 +36,7 @@
 	<script type="text/javascript"></script>
 </head>
 <body>
-	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image: url(../photo/beijing4.jpg)">
+	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image: url(${APP_PATH}/photo/beijing4.jpg)">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
@@ -51,7 +51,7 @@
 								<div class="tab">
 									<ul class="tab-menu">
 										<li class="gtco-first" id="singup"><a href="#" data-tab="signup">Sign up</a></li>
-										<li class="active gtco-second" id="login"><a href="#" data-tab="login">Login</a></li>
+										<li class="active gtco-first" id="login"><a href="#" data-tab="login">Login</a></li>
 									</ul>
 									<div class="tab-content">
 										<div class="tab-content-inner" data-content="signup">
