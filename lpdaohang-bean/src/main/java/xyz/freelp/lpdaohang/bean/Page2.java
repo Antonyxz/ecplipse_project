@@ -6,7 +6,6 @@ public class Page2 {
 	private String lablename;
 	private String weburl;
 	private String webname;
-	private String textinfo;
 	private Integer webid;
 	private Integer isdel;
 	public int getUserid() {
@@ -26,13 +25,6 @@ public class Page2 {
 	}
 	public void setWeburl(String weburl) {
 		this.weburl = weburl;
-	}
-	
-	public String getTextinfo() {
-		return textinfo;
-	}
-	public void setTextinfo(String textinfo) {
-		this.textinfo = textinfo;
 	}
 	public Integer getLableid() {
 		return lableid;

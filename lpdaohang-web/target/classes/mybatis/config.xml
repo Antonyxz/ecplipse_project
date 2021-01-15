@@ -3,7 +3,7 @@
 <configuration>
     <typeAliases>
         <typeAlias type="xyz.freelp.lpdaohang.bean.User" alias="user"/>
-        <typeAlias type="xyz.freelp.lpdaohang.bean.Page1a3" alias="page1a3"/>
+        <typeAlias type="xyz.freelp.lpdaohang.bean.Page1a2" alias="page1a2"/>
         <typeAlias type="xyz.freelp.lpdaohang.bean.Page2" alias="page2"/>
     </typeAliases>
 </configuration>

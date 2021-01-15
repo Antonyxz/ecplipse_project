@@ -18,7 +18,7 @@ import Utli.InviteCodeUtil;
 import Utli.MD5;
 import xyz.freelp.lpdaohang.bean.AJAXResult;
 import xyz.freelp.lpdaohang.bean.AJAXResult2;
-import xyz.freelp.lpdaohang.bean.Page1a3;
+import xyz.freelp.lpdaohang.bean.Page1a2;
 import xyz.freelp.lpdaohang.bean.Page2;
 import xyz.freelp.lpdaohang.bean.User;
 import xyz.freelp.lpdaohang.manager.service.UserService;
@@ -82,11 +82,8 @@ public class DispatcherControll {
 				List<Page2> lableName = userService.queryLableName(dbUser.getId());
 				//获取标签内容
 				List<Page2> lable = userService.queryLable(dbUser.getId());
-				//获取笔记内容
-				Page2 userText = userService.queryUserText(dbUser.getId());
 				session.setAttribute("lablename", lableName);
 				session.setAttribute("lable", lable);
-				session.setAttribute("usertext", userText);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -125,11 +122,8 @@ public class DispatcherControll {
 					List<Page2> lableName = userService.queryLableName(dbUser.getId());
 					//获取标签内容
 					List<Page2> lable = userService.queryLable(dbUser.getId());
-					//获取笔记内容
-					Page2 userText = userService.queryUserText(dbUser.getId());
 					session.setAttribute("lablename", lableName);
 					session.setAttribute("lable", lable);
-					session.setAttribute("usertext", userText);
 				}
 			}
 		}catch(Exception e) {

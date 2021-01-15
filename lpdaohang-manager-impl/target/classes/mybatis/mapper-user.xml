@@ -49,8 +49,8 @@
 		UPDATE userinfo SET userpswd = #{1} WHERE id = #{0}
 	</update>
 	<!-- 获取初始化信息 -->
-	<select id="queryInitDate" resultType="page1a3">
-		SELECT * from page1 UNION SELECT * FROM page3
+	<select id="queryInitDate" resultType="page1a2">
+		SELECT * from page1 UNION SELECT * FROM page2
 	</select>
 	<!-- 获取用户标签名 -->
 	<select id="queryLableName" resultType="page2">
@@ -59,10 +59,6 @@
 	<!-- 获取标签内容 -->
 	<select id="queryLable" resultType="page2">
 		SELECT lablename,webname,weburl,webid FROM lableinfo WHERE userid = #{id} AND isdel = 0;
-	</select>
-	<!-- 获取用户文本内容 -->
-	<select id="queryUserText" resultType="page2">
-		SELECT textinfo FROM text WHERE userid = #{id};
 	</select>
 	<!-- 添加用户标签 -->
 	<insert id="insterLableName">

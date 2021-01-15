@@ -2,17 +2,16 @@ package xyz.freelp.lpdaohang.manager.dao;
 
 import java.util.List;
 
-import xyz.freelp.lpdaohang.bean.Page1a3;
+import xyz.freelp.lpdaohang.bean.Page1a2;
 import xyz.freelp.lpdaohang.bean.Page2;
 import xyz.freelp.lpdaohang.bean.User;
 
 public interface UserDao {
 	User queryLoginUser(User user);
 	User queryUserInfo(Integer id);
-	List<Page1a3> queryInitDate();
+	List<Page1a2> queryInitDate();
 	List<Page2> queryLableName(Integer id);
 	List<Page2> queryLable(Integer id);
-	Page2 queryUserText(Integer id);
 	Integer insterLableName(Integer id, String lablename);
 	Integer delLable(Integer lableid);
 	Integer delWeb(Integer id, Integer lablename);

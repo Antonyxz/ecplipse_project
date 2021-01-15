@@ -72,7 +72,7 @@
 				</div>
 				<!--搜索-->
 				<div class="all-sl" id="sousuo"> 
-					<c:forEach items="${page1a3}" var="page">
+					<c:forEach items="${page1a2}" var="page">
 						<c:if test="${page.webtype == 1}">
 							<button class="db" alt="${page.weburl}"><span>${page.webname}</span></button>
 						</c:if>
@@ -80,7 +80,7 @@
 				</div>
 				<!--视频-->
 				<div class="all-sl" id="shipin">
-					<c:forEach items="${page1a3}" var="page">
+					<c:forEach items="${page1a2}" var="page">
 						<c:if test="${page.webtype == 2}">
 							<button class="db" alt="${page.weburl}"><span>${page.webname}</span></button>
 						</c:if>
@@ -88,7 +88,7 @@
 				</div>
 				<!--音频-->
 				<div class="all-sl" id="yinpin">
-					<c:forEach items="${page1a3}" var="page">
+					<c:forEach items="${page1a2}" var="page">
 						<c:if test="${page.webtype == 3}">
 							<button class="db" alt="${page.weburl}"><span>${page.webname}</span></button>
 						</c:if>
@@ -96,7 +96,7 @@
 				</div>
 				<!--社交-->
 				<div class="all-sl" id="shejiao">
-					<c:forEach items="${page1a3}" var="page">
+					<c:forEach items="${page1a2}" var="page">
 						<c:if test="${page.webtype == 4}">
 							<button class="db" alt="${page.weburl}"><span>${page.webname}</span></button>
 						</c:if>
@@ -104,7 +104,7 @@
 				</div>
 				<!--翻译-->
 				<div class="all-sl" id="fanyi">
-					<c:forEach items="${page1a3}" var="page">
+					<c:forEach items="${page1a2}" var="page">
 						<c:if test="${page.webtype == 5}">
 							<button class="db" alt="${page.weburl}"><span>${page.webname}</span></button>
 						</c:if>
@@ -112,7 +112,7 @@
 				</div>
 				<!--文库-->
 				<div class="all-sl" id="wenku">
-					<c:forEach items="${page1a3}" var="page">
+					<c:forEach items="${page1a2}" var="page">
 						<c:if test="${page.webtype == 6}">
 							<button class="db" alt="${page.weburl}"><span>${page.webname}</span></button>
 						</c:if>
@@ -128,7 +128,7 @@
 				</div>
 				<!--学术-->
 				<div class="all-sl" id="xueshu">
-					<c:forEach items="${page1a3}" var="page">
+					<c:forEach items="${page1a2}" var="page">
 						<c:if test="${page.webtype == 8}">
 							<button class="db" alt="${page.weburl}"><span>${page.webname}</span></button>
 						</c:if>
@@ -161,24 +161,6 @@
 				</div>
 				<span class="plus">+</span>
 			</div>
-			<div class="wins">
-				<div class="win-list">
-					<dl>
-						<dd id="win-list-jishi"><span>记事本</span></dd>
-						<dd><span>日历</span>></dd>
-					</dl>
-				</div>
-				<div class="win-run">
-					<div class="jishi" id="win-run1">
-						<div id="test-editormd">
-							<textarea style="display:none;" id="ts">${usertext.textinfo}</textarea>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--第三个页面-->
-		<div class="section">
 			<div class="dh-win">
 				<div class="win2-list">
 					<dl>
@@ -192,42 +174,42 @@
 				</div>
 				<div class="win2-run">
 					<div class="win2-list2" id="win2-cili" style="display: block;">
-						<c:forEach items="${page1a3}" var="page">
+						<c:forEach items="${page1a2}" var="page">
 							<c:if test="${page.webtype == 100}">
 								<button><a href="${page.weburl}" target="_blank">${page.webname}</a></button>
 							</c:if>
 						</c:forEach>
 					</div>
 					<div class="win2-list2" id="win2-video">
-						<c:forEach items="${page1a3}" var="page">
+						<c:forEach items="${page1a2}" var="page">
 							<c:if test="${page.webtype == 101}">
 								<button><a href="${page.weburl}" target="_blank">${page.webname}</a></button>
 							</c:if>
 						</c:forEach>
 					</div>
 					<div class="win2-list2" id="win2-stu">
-						<c:forEach items="${page1a3}" var="page">
+						<c:forEach items="${page1a2}" var="page">
 							<c:if test="${page.webtype == 102}">
 								<button><a href="${page.weburl}" target="_blank">${page.webname}</a></button>
 							</c:if>
 						</c:forEach>
 					</div>
 					<div class="win2-list2" id="win2-yuan">
-						<c:forEach items="${page1a3}" var="page">
+						<c:forEach items="${page1a2}" var="page">
 							<c:if test="${page.webtype == 103}">
 								<button><a href="${page.weburl}" target="_blank">${page.webname}</a></button>
 							</c:if>
 						</c:forEach>
 					</div>
 					<div class="win2-list2" id="win2-sheji">
-						<c:forEach items="${page1a3}" var="page">
+						<c:forEach items="${page1a2}" var="page">
 							<c:if test="${page.webtype == 104}">
 								<button><a href="${page.weburl}" target="_blank">${page.webname}</a></button>
 							</c:if>
 						</c:forEach>
 					</div>
 					<div class="win2-list2" id="win2-app">
-						<c:forEach items="${page1a3}" var="page">
+						<c:forEach items="${page1a2}" var="page">
 							<c:if test="${page.webtype == 105}">
 								<button><a href="${page.weburl}" target="_blank">${page.webname}</a></button>
 							</c:if>

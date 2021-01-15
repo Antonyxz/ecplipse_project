@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import xyz.freelp.lpdaohang.bean.Page1a3;
+import xyz.freelp.lpdaohang.bean.Page1a2;
 import xyz.freelp.lpdaohang.bean.Page2;
 import xyz.freelp.lpdaohang.bean.User;
 import xyz.freelp.lpdaohang.manager.dao.UserDao;
@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<Page1a3> queryInitDate() {
+	public List<Page1a2> queryInitDate() {
 		// TODO Auto-generated method stub
 		return userDao.queryInitDate();
 	}
@@ -43,12 +43,6 @@ public class UserServiceImpl implements UserService {
 	public List<Page2> queryLable(Integer id) {
 		// TODO Auto-generated method stub
 		return userDao.queryLable(id);
-	}
-
-	@Override
-	public Page2 queryUserText(Integer id) {
-		// TODO Auto-generated method stub
-		return userDao.queryUserText(id);
 	}
 
 	@Override

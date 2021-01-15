@@ -18,7 +18,7 @@ $(document).ready(function() {
 		 
 		resize:false, //字体是否随着窗口缩放而缩放(默认为false)
 		
-		scrolllingSpeed:500,  //滚动速度，单位为毫秒(默认为700)
+		scrolllingSpeed:1000,  //滚动速度，单位为毫秒(默认为700)
 		
 		anchors:['page1','page2','page3'],  //定义锚链接(值不能和页面中任意的id或name相同，尤其是在ie下，定义时不需要加#)  
 
