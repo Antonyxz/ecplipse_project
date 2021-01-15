@@ -104,7 +104,7 @@
 		    	},
 		    	success : function(result){
 		    		if(result.success){
-		    			window.location.href = "${APP_PATH}/xzk/d/website.htm";
+		    			window.location.href = "${APP_PATH}/xzk/d/hindex.htm";
 		    		}else{
 		    			alert("id或密码错误，请重新登录！");
 		    		}
