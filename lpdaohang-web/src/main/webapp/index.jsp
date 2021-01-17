@@ -121,7 +121,7 @@
 				</div>
 				<!--云盘-->
 				<div class="all-sl" id="cili">
-					<c:forEach items="${page1a3}" var="page">
+					<c:forEach items="${page1a2}" var="page">
 						<c:if test="${page.webtype == 7}">
 							<button class="db" alt="${page.weburl}"><span>${page.webname}</span></button>
 						</c:if>

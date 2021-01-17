@@ -2,6 +2,7 @@ package xyz.freelp.lpdaohang.bean;
 
 public class Administrator {
 	private Integer id;
+	private String adminname;
 	private String adminpswd;
 	public Integer getId() {
 		return id;
@@ -14,6 +15,12 @@ public class Administrator {
 	}
 	public void setAdminpswd(String adminpswd) {
 		this.adminpswd = adminpswd;
+	}
+	public String getAdminname() {
+		return adminname;
+	}
+	public void setAdminname(String adminname) {
+		this.adminname = adminname;
 	}
 	
 }

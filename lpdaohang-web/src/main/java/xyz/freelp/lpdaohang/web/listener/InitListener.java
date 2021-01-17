@@ -17,7 +17,7 @@ public class InitListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		// TODO Auto-generated method stub
 		ApplicationContext ac = WebApplicationContextUtils.getWebApplicationContext(sce.getServletContext());
-		UserService userService = (UserService) ac.getBean("userServiceImpl");
+		UserService userService = (UserService)ac.getBean("userServiceImpl");
 		List<Page1a2> initDate = userService.queryInitDate();
 		sce.getServletContext().setAttribute("page1a2", initDate);
 	}

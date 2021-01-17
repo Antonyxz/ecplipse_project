@@ -57,14 +57,14 @@
 											<form action="${APP_PATH}/dohlogin.htm" id="loginForm" method="post">
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">管理员id</label>
+														<label for="username">名称</label>
 														<input type="text" class="form-control" id="administrator" name="administrator">
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="userpswd">密码</label>
-														<input type="password" class="form-control" id="userpswd" name="userpswd">
+														<input type="password" class="form-control" id="adminpswd" name="adminpswd">
 													</div>
 												</div>
 
@@ -87,10 +87,10 @@
 	<script>
 		function dohlogin(){
 		    if ($("#administrator").val() == ""){
-		        alert("请输入管理员id！");
+		        alert("请输入管理员名称！");
 		        return;
 		    }
-		    if ($("#userpswd").val() == ""){
+		    if ($("#adminpswd").val() == ""){
 		        alert("请输入密码！");
 		        return;
 		    }
@@ -99,14 +99,14 @@
 		    	type : "POST",
 		    	dataType : "json",
 		    	data : {
-		    		"administrator" : $("#administrator").val(),
-		    		"userpswd" : $("#userpswd").val()
+		    		"adminname" : $("#administrator").val(),
+		    		"adminpswd" : $("#adminpswd").val()
 		    	},
 		    	success : function(result){
 		    		if(result.success){
-		    			window.location.href = "${APP_PATH}/xzk/d/hindex.htm";
+		    			window.location.href = "${APP_PATH}/hindex.htm";
 		    		}else{
-		    			alert("id或密码错误，请重新登录！");
+		    			alert("名称或密码错误，请重新登录！");
 		    		}
 		    	},
 		    	error : function(){
