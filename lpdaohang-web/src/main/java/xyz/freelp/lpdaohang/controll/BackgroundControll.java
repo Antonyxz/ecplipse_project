@@ -33,6 +33,16 @@ public class BackgroundControll {
 		return "hindex";
 	}
 	
+	@RequestMapping("/hfirstpage")
+	public String hfirstpage() {
+		return "hfirstpage";
+	}
+	
+	@RequestMapping("/hsecondpage")
+	public String hsecondpage() {
+		return "hsecondpage";
+	}
+	
 	//登陆校验
 	@ResponseBody
 	@RequestMapping("/dohlogin")
