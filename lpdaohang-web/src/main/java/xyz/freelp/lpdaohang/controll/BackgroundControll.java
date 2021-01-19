@@ -1,12 +1,14 @@
 package xyz.freelp.lpdaohang.controll;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import Utli.MD5;
 import xyz.freelp.lpdaohang.bean.AJAXResult;
@@ -33,9 +35,9 @@ public class BackgroundControll {
 		return "hindex";
 	}
 	
-	@RequestMapping("/hfirstpage")
-	public String hfirstpage() {
-		return "hfirstpage";
+	@RequestMapping("/hpage1")
+	public String hpage1() {
+		return "hpage1";
 	}
 	
 	@RequestMapping("/hsecondpage")
@@ -64,4 +66,5 @@ public class BackgroundControll {
 		}
 		return result;
 	}
+	
 }
