@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>良品导航</title>
+	<link rel="icon" href="${APP_PATH}/photo/logo.ico" type="image/x-icon"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="${APP_PATH}/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="${APP_PATH}/css/jquery.fullPage.css" />

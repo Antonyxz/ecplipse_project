@@ -4,7 +4,7 @@
 <html lang="zh-hans">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>良品后台</title>
+	<title>良品后台-第一页</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="${APP_PATH}/assets/img/icon.ico" type="image/x-icon"/>
 
@@ -23,9 +23,11 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="${APP_PATH}/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="${APP_PATH}/assets/css/atlantis.min.css">
+	<link rel="stylesheet" href="${APP_PATH}/layui/css/layui.css"  media="all">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="${APP_PATH}/assets/css/demo.css">
+	<link rel="stylesheet" href="../css/ht.css">
 </head>
 <body data-background-color="dark">
 	<div class="wrapper">
@@ -161,7 +163,72 @@
 
 		<div class="main-panel">
 			<div class="content">
-				
+				<div class="layui-btn-group demoTable">
+					<button class="layui-btn" data-type="getCheckData">添加</button>
+				  </div>
+				   
+				  <table id="page1" lay-filter="page1"></table>
+				   
+				  <script type="text/html" id="barDemo">
+					<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+					<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+					<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+				  </script>
+								 
+							
+				  <script src="${APP_PATH}/layui/layui.js" charset="utf-8"></script>
+				  <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+				  <script>
+				  var tableIns = table.render({
+					    elem: '#page1',
+					    url : '${APP_PATH}/doPage1.do',
+					    cellMinWidth : 50,
+					    page : true,
+					    height : "full-20",
+					    limits : [10,20,30],
+					    limit : 10,
+					    id : "page1Table",
+					    cols : [[
+					        {field: 'webtype', title: '类别', minWidth:50, align:"center"},
+					        {field: 'webname', title: '网站名称', minWidth:200, align:'center'},
+					        {field: 'weburl', title: '链接', align:'center'}
+					    ]]
+					});
+				  layui.use('table', function(){
+					var table = layui.table;
+					//监听表格复选框选择
+					table.on('checkbox(demo)', function(obj){
+					  console.log(obj)
+					});
+					//监听工具条
+					table.on('tool(demo)', function(obj){
+					  var data = obj.data;
+					  if(obj.event === 'detail'){
+						layer.msg('ID：'+ data.id + ' 的查看操作');
+					  } else if(obj.event === 'del'){
+						layer.confirm('真的删除行么', function(index){
+						  obj.del();
+						  layer.close(index);
+						});
+					  } else if(obj.event === 'edit'){
+						layer.alert('编辑行：<br>'+ JSON.stringify(data))
+					  }
+					});
+					
+					var $ = layui.$, active = {
+					  getCheckData: function(){ //添加
+						var checkStatus = table.checkStatus('idTest')
+						,data = checkStatus.data;
+						layer.alert(JSON.stringify(data));
+					  }
+					};
+					
+					$('.demoTable .layui-btn').on('click', function(){
+					  var type = $(this).data('type');
+					  active[type] ? active[type].call(this) : '';
+					});
+				  });
+				  </script>
 			</div>
 			<footer class="footer">
 				<div class="container-fluid">
@@ -283,7 +350,7 @@
 
 	<!-- jQuery Vector Maps -->
 	<script src="${APP_PATH}/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+	<script src="${APP_PATH}/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
 	<!-- Sweet Alert -->
 	<script src="${APP_PATH}/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
